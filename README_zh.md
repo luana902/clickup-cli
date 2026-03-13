@@ -11,7 +11,7 @@ npm install -g @discountry/clickup-cli
 clickup --help
 ```
 
-安装 Codex skill：
+从当前仓库安装 Codex skill：
 
 ```bash
 npx skills add discountry/clickup-cli --skill clickup
@@ -79,7 +79,7 @@ clickup create-page abc123 "New Section" --content "Hello" --sub-title "Summary"
 clickup edit-page abc123 page456 --name "Renamed" --sub-title "Updated" --content "# Updated" --content-edit-mode append
 ```
 
-需要原始 API 输出时加 `--json`。
+需要结构化命令输出时加 `--json`。
 
 文档和页面命令：
 

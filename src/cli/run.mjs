@@ -27,6 +27,7 @@ export async function runCli({
   argv = process.argv.slice(2),
   env = process.env,
   fetchImpl = globalThis.fetch,
+  createApplicationImpl = createApplication,
   stdout = process.stdout,
   stderr = process.stderr,
   now = () => new Date(),
@@ -48,7 +49,7 @@ export async function runCli({
     let application = null;
     const getApp = () => {
       if (!application) {
-        application = createApplication({ env, fetchImpl, now });
+        application = createApplicationImpl({ env, fetchImpl, now });
       }
       return application;
     };

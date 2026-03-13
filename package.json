@@ -1,6 +1,6 @@
 {
   "name": "@discountry/clickup-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A globally installable ClickUp CLI for tasks, comments, and docs.",
   "type": "module",
   "bin": {
@@ -13,7 +13,6 @@
   "files": [
     "bin",
     "src",
-    "docs",
     "README.md",
     "README_zh.md"
   ],
