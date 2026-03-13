@@ -1,0 +1,44 @@
+export const OPTION_DEFINITIONS = [
+  { key: 'help', names: ['--help', '-h'], type: 'boolean', description: 'Show help' },
+  { key: 'json', names: ['--json'], type: 'boolean', description: 'Output raw JSON' },
+  { key: 'subtasks', names: ['--subtasks'], type: 'boolean', description: 'Include subtasks for `get`' },
+  { key: 'me', names: ['--me'], type: 'boolean', description: 'Filter `tasks` to the current user' },
+  { key: 'assignee', names: ['--assignee', '-a'], type: 'string', description: 'Assignee for `create`' },
+  { key: 'due', names: ['--due', '-d'], type: 'string', description: 'Due date for `create`' },
+  { key: 'description', names: ['--description', '--desc'], type: 'string', description: 'Task description for `create`' },
+  { key: 'content', names: ['--content', '-c'], type: 'string', description: 'Page or doc content' },
+  { key: 'name', names: ['--name', '-n'], type: 'string', description: 'New page name for `edit-page`' },
+];
+
+export const COMMAND_DEFINITIONS = [
+  { name: 'get', usage: 'get <url|id>', description: 'Get task details', section: 'Task Commands' },
+  { name: 'comments', usage: 'comments <url|id>', description: 'List task comments', section: 'Task Commands' },
+  { name: 'comment', usage: 'comment <url|id> "message"', description: 'Post a task comment', section: 'Task Commands' },
+  { name: 'status', usage: 'status <url|id> [status]', description: 'Update a task status or list available statuses', section: 'Task Commands' },
+  { name: 'tasks', usage: 'tasks <list_id>', description: 'List tasks in a list', section: 'Task Commands' },
+  { name: 'me', usage: 'me', description: 'Show current user info', section: 'Task Commands' },
+  { name: 'create', usage: 'create [list_id] "title"', description: 'Create a task, optionally using CLICKUP_DEFAULT_LIST_ID', section: 'Task Commands' },
+  { name: 'my-tasks', usage: 'my-tasks', description: 'List tasks assigned to the current user', section: 'Task Commands' },
+  { name: 'search', usage: 'search "query"', description: 'Search tasks by name or description', section: 'Task Commands' },
+  { name: 'assign', usage: 'assign <task> <user>', description: 'Assign a task to a user', section: 'Task Commands' },
+  { name: 'due', usage: 'due <task> "date"', description: 'Set or clear a due date', section: 'Task Commands' },
+  { name: 'priority', usage: 'priority <task> <level>', description: 'Set priority: urgent, high, normal, low, none', section: 'Task Commands' },
+  { name: 'subtask', usage: 'subtask <task> "title"', description: 'Create a subtask', section: 'Task Commands' },
+  { name: 'move', usage: 'move <task> <list_id>', description: 'Move a task to a list', section: 'Task Commands' },
+  { name: 'link', usage: 'link <task> <url> ["description"]', description: 'Add an external link reference via comment', section: 'Task Commands' },
+  { name: 'checklist', usage: 'checklist <task> "item"', description: 'Add a checklist item to a task', section: 'Task Commands' },
+  { name: 'delete-comment', usage: 'delete-comment <comment_id>', description: 'Delete a comment', section: 'Task Commands' },
+  { name: 'watch', usage: 'watch <task> <user>', description: 'Notify a user with an @mention comment', section: 'Task Commands' },
+  { name: 'tag', usage: 'tag <task> "tag_name"', description: 'Add a tag to a task', section: 'Task Commands' },
+  { name: 'description', usage: 'description <task> "text"', description: 'Update a task description using Markdown', section: 'Task Commands' },
+  { name: 'docs', usage: 'docs ["query"]', description: 'Search or list docs in the workspace', section: 'Document Commands' },
+  { name: 'doc', usage: 'doc <doc_id>', description: 'Get doc details and pages', section: 'Document Commands' },
+  { name: 'create-doc', usage: 'create-doc "title"', description: 'Create a doc, optionally with --content', section: 'Document Commands' },
+  { name: 'page', usage: 'page <doc_id> <page_id>', description: 'Get page content', section: 'Document Commands' },
+  { name: 'create-page', usage: 'create-page <doc_id> "title"', description: 'Create a page in a doc', section: 'Document Commands' },
+  { name: 'edit-page', usage: 'edit-page <doc_id> <page_id>', description: 'Edit a page with --content and/or --name', section: 'Document Commands' },
+];
+
+export function getCommandDefinition(name) {
+  return COMMAND_DEFINITIONS.find((command) => command.name === name) ?? null;
+}

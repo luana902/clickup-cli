@@ -1,0 +1,32 @@
+# Local development and repository metadata
+.agents/
+.git/
+.github/
+.vscode/
+.idea/
+AGENTS.md
+skills-lock.json
+pnpm-lock.yaml
+
+# Local dependencies and caches
+node_modules/
+.pnpm-store/
+.npm-cache/
+.npm/
+
+# Tests and development-only files
+tests/
+coverage/
+dist/
+build/
+out/
+
+# Generated package artifacts
+*.tgz
+*.log
+
+# Local configuration
+.env
+.env.*
+.npmrc
+.npmrc.*

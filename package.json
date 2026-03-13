@@ -1,13 +1,53 @@
 {
-  "name": "clickup-cli",
+  "name": "@discountry/clickup-cli",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "A globally installable ClickUp CLI for tasks, comments, and docs.",
+  "type": "module",
+  "bin": {
+    "clickup": "./bin/clickup.js"
   },
-  "keywords": [],
+  "main": "./src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "README_zh.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "pack:check": "npm pack --dry-run --json --cache ./.npm-cache",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "clickup",
+    "cli",
+    "tasks",
+    "docs",
+    "productivity"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/discountry/clickup-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/discountry/clickup-cli/issues"
+  },
+  "homepage": "https://github.com/discountry/clickup-cli#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "dependencies": {
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5"
+  },
   "packageManager": "pnpm@10.30.3"
 }
