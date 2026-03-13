@@ -2,28 +2,16 @@
 
 [中文说明](./README_zh.md)
 
-A globally installable ClickUp CLI for tasks, comments, and docs. It repackages the repository's existing skill capabilities into a proper npm CLI package structure:
+Global ClickUp CLI for tasks, comments, and docs.
 
-- Reads configuration directly from shell environment variables
-- Covers task, comment, and doc workflows
-- Keeps the codebase modular for ongoing maintenance
-- Includes automated tests with `node:test`
-
-## Installation
+## Install
 
 ```bash
 npm install -g @discountry/clickup-cli
-```
-
-After installation, invoke it directly:
-
-```bash
 clickup --help
 ```
 
-## Companion Skill
-
-After installing the CLI, you can install the companion Codex skill:
+Install the Codex skill:
 
 ```bash
 npx skills add discountry/clickup-cli --skill clickup
@@ -31,17 +19,17 @@ npx skills add discountry/clickup-cli --skill clickup
 npx skills add https://github.com/discountry/clickup-cli --skill clickup
 ```
 
-The skill calls the global `clickup` binary, so keep the CLI installed and the same environment variables configured. See `skills/clickup/README.md` for details.
+Skill docs: [skills/clickup/README.md](./skills/clickup/README.md)
 
-For local development against this repository:
+Local package install:
 
 ```bash
 npm install -g .
 ```
 
-## Configuration
+## Configure
 
-This package does not rely on a local `.env` file. It reads from shell environment variables:
+Set shell environment variables:
 
 ```bash
 export CLICKUP_API_TOKEN=pk_your_token_here
@@ -52,13 +40,13 @@ export CLICKUP_DEFAULT_LIST_ID=901111220963
 
 Variables:
 
-- `CLICKUP_API_TOKEN`: required, your ClickUp Personal API Token
-- `CLICKUP_WORKSPACE_ID`: optional, recommended; if omitted the CLI falls back to the first workspace returned by the API
-- `CLICKUP_TEAM_ID`: legacy alias for `CLICKUP_WORKSPACE_ID`
-- `CLICKUP_USER_ID`: optional, auto-detected from the API when unset
-- `CLICKUP_DEFAULT_LIST_ID`: optional, used by shorthand commands such as `clickup create "Task title"`
+- `CLICKUP_API_TOKEN`: required. ClickUp Personal API Token.
+- `CLICKUP_WORKSPACE_ID`: optional. Workspace ID.
+- `CLICKUP_TEAM_ID`: optional. Alias for `CLICKUP_WORKSPACE_ID`.
+- `CLICKUP_USER_ID`: optional. Current user ID.
+- `CLICKUP_DEFAULT_LIST_ID`: optional. Default list for `clickup create "Task title"`.
 
-## Common Commands
+## Commands
 
 ```bash
 clickup me
@@ -90,7 +78,7 @@ clickup create-page abc123 "New Section" --content "Hello"
 clickup edit-page abc123 page456 --name "Renamed" --content "# Updated"
 ```
 
-Use `--json` to print raw API responses for scripting.
+Add `--json` for raw API output.
 
 ## Development
 
@@ -100,11 +88,11 @@ pnpm test
 npm run pack:check
 ```
 
-Entrypoints:
+Paths:
 
-- `bin/clickup.js`: global CLI entry
-- `src/cli/`: argument parsing, command registration, and help text
-- `src/services/`: task, comment, doc, and user services
-- `src/http/`: ClickUp HTTP client
-- `src/utils/`: ID parsing, date parsing, Markdown conversion, and output formatting
-- `tests/`: automated tests
+- `bin/clickup.js`: CLI entry.
+- `src/cli/`: argument parsing, command registration, help text.
+- `src/services/`: task, comment, doc, and user services.
+- `src/http/`: ClickUp HTTP client.
+- `src/utils/`: ID parsing, date parsing, Markdown conversion, output formatting.
+- `tests/`: automated tests.
