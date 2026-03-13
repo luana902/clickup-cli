@@ -21,6 +21,18 @@ After installation, invoke it directly:
 clickup --help
 ```
 
+## Companion Skill
+
+After installing the CLI, you can install the companion Codex skill:
+
+```bash
+npx skills add discountry/clickup-cli --skill clickup
+# or
+npx skills add https://github.com/discountry/clickup-cli --skill clickup
+```
+
+The skill calls the global `clickup` binary, so keep the CLI installed and the same environment variables configured. See `skills/clickup/README.md` for details.
+
 For local development against this repository:
 
 ```bash

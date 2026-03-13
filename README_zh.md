@@ -21,6 +21,18 @@ npm install -g @discountry/clickup-cli
 clickup --help
 ```
 
+## 搭配 Skill 使用
+
+安装完 CLI 后，可以继续安装配套的 Codex skill：
+
+```bash
+npx skills add discountry/clickup-cli --skill clickup
+# 或
+npx skills add https://github.com/discountry/clickup-cli --skill clickup
+```
+
+这个 skill 会直接调用全局 `clickup` 命令，所以保留 CLI 安装并继续使用同一套环境变量即可。具体说明见 `skills/clickup/README.md`。
+
 如果你只是本地联调当前仓库，仍然可以在仓库根目录执行：
 
 ```bash
