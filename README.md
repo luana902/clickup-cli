@@ -105,3 +105,7 @@ Paths:
 - `src/http/`: ClickUp HTTP client.
 - `src/utils/`: ID parsing, date parsing, Markdown conversion, output formatting.
 - `tests/`: automated tests.
+
+## Mirror Notice
+
+This repository is a mirror of the original project. Original authorship and commit history are preserved.
